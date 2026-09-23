@@ -11,8 +11,13 @@ const BOB_AMP = 0.08
 var t_bob = 0.0
 const BASE_FOV = 90
 const CHANGE_FOV = 1.5
+
+var bullet_scene = load("res://Scenes/bullet.tscn")
+var bullet 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
+@onready var weapon_animation = $Head/Camera3D/WeaponPosition/USP/AnimationPlayer
+@onready var weapon_barrel = $Head/Camera3D/WeaponPosition/USP/RayCast3D
 
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -57,6 +62,13 @@ func _physics_process(delta: float) -> void:
 	var velocity_clamped = clamp(velocity.length(), 0.5, SPRINT_SPEED * 2)
 	var target_fov = BASE_FOV + CHANGE_FOV * velocity_clamped
 	camera.fov =  lerp(camera.fov, target_fov, delta * 8)
+	if Input.is_action_pressed("shoot"):
+		if !weapon_animation.is_playing():
+			weapon_animation.play("Shoot")
+			bullet = bullet_scene.instantiate()
+			bullet.position = weapon_barrel.global_position
+			bullet.transform.basis = weapon_barrel.global_transform.basis
+			get_parent().add_child(bullet)
 	move_and_slide()
 
 func _headbob (time) -> Vector3:

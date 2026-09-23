@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://p64bod06c7vu" path="res://player.gd" id="1_f3sb7"]
 [ext_resource type="Texture2D" uid="uid://b1b4a1qwq3tad" path="res://O5NY870.jpg" id="1_fj7yv"]
+[ext_resource type="PackedScene" uid="uid://tkqowjlmh418" path="res://Scenes/usp.tscn" id="3_aqk2v"]
 [ext_resource type="PackedScene" uid="uid://r0khjnt0yuin" path="res://Models/Crypt/Crypt.tscn" id="3_tlwt5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_f3sb7"]
@@ -55,6 +56,12 @@ shape = SubResource("ConvexPolygonShape3D_fj7yv")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5343589, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Player/Head" unique_id=875542742]
+fov = 68.3
+
+[node name="WeaponPosition" type="Node3D" parent="Player/Head/Camera3D" unique_id=1335591081]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4545225, -0.44272804, -0.6652734)
+
+[node name="USP" parent="Player/Head/Camera3D/WeaponPosition" unique_id=616665079 instance=ExtResource("3_aqk2v")]
 
 [node name="crypt3" parent="." unique_id=809256852 instance=ExtResource("3_tlwt5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8112526, 7.218321, 39.857174)
