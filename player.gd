@@ -13,7 +13,8 @@ const BASE_FOV = 90
 const CHANGE_FOV = 1.5
 
 var bullet_scene = load("res://Scenes/bullet.tscn")
-var bullet 
+var bullet = load("res://Scenes/bullet.tscn")
+var instance
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 @onready var weapon_animation = $Head/Camera3D/WeaponPosition/USP/AnimationPlayer
@@ -76,3 +77,4 @@ func _headbob (time) -> Vector3:
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
 	return pos
+	

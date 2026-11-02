@@ -45,7 +45,7 @@ material = SubResource("StandardMaterial3D_xrivr")
 script = ExtResource("1_f3sb7")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player" unique_id=7685571]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.028094, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2306201, 0)
 mesh = SubResource("CapsuleMesh_xrivr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=1927436894]
@@ -56,6 +56,7 @@ shape = SubResource("ConvexPolygonShape3D_fj7yv")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5343589, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Player/Head" unique_id=875542742]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.19901323, 0)
 fov = 68.3
 
 [node name="WeaponPosition" type="Node3D" parent="Player/Head/Camera3D" unique_id=1335591081]
