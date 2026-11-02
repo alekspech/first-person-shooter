@@ -64,9 +64,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4545225, -0.44272804, -0.66
 
 [node name="USP" parent="Player/Head/Camera3D/WeaponPosition" unique_id=616665079 instance=ExtResource("3_aqk2v")]
 
-[node name="crypt3" parent="." unique_id=809256852 instance=ExtResource("3_tlwt5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8112526, 7.218321, 39.857174)
-
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=621170425]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7379855, 1.640446, 9.265518)
 use_collision = true
@@ -111,3 +108,6 @@ size = Vector3(3, 1, 2)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5727925, 4.520968, -7.3645244)
 use_collision = true
 size = Vector3(1, 10, 1)
+
+[node name="crypt2" parent="." unique_id=809256852 instance=ExtResource("3_tlwt5")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 32.76271, -0.02422142, -1.2569656)
